@@ -54,7 +54,7 @@ namespace Vendr.PaymentProviders.Stripe
             }
             catch (Exception ex)
             {
-                Vendr.Log.Error<StripeCheckoutOneTimePaymentProvider>(ex, "Stripe - GetOrderReference");
+                Vendr.Log.Error<StripeCheckoutPaymentProvider>(ex, "Stripe - GetOrderReference");
             }
 
             return base.GetOrderReference(request, settings);

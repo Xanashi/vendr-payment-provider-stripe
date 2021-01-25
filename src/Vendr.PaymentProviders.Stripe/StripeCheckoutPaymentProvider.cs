@@ -380,7 +380,7 @@ namespace Vendr.PaymentProviders.Stripe
             }
             catch (Exception ex)
             {
-                Vendr.Log.Error<StripeCheckoutOneTimePaymentProvider>(ex, "Stripe - ProcessCallback");
+                Vendr.Log.Error<StripeCheckoutPaymentProvider>(ex, "Stripe - ProcessCallback");
             }
 
             return CallbackResult.BadRequest();
@@ -430,7 +430,7 @@ namespace Vendr.PaymentProviders.Stripe
             }
             catch (Exception ex)
             {
-                Vendr.Log.Error<StripeCheckoutOneTimePaymentProvider>(ex, "Stripe - FetchPaymentStatus");
+                Vendr.Log.Error<StripeCheckoutPaymentProvider>(ex, "Stripe - FetchPaymentStatus");
             }
 
             return ApiResult.Empty;
@@ -476,7 +476,7 @@ namespace Vendr.PaymentProviders.Stripe
             }
             catch (Exception ex)
             {
-                Vendr.Log.Error<StripeCheckoutOneTimePaymentProvider>(ex, "Stripe - CapturePayment");
+                Vendr.Log.Error<StripeCheckoutPaymentProvider>(ex, "Stripe - CapturePayment");
             }
 
             return ApiResult.Empty;
@@ -532,7 +532,7 @@ namespace Vendr.PaymentProviders.Stripe
             }
             catch (Exception ex)
             {
-                Vendr.Log.Error<StripeCheckoutOneTimePaymentProvider>(ex, "Stripe - RefundPayment");
+                Vendr.Log.Error<StripeCheckoutPaymentProvider>(ex, "Stripe - RefundPayment");
             }
 
             return ApiResult.Empty;
@@ -574,7 +574,7 @@ namespace Vendr.PaymentProviders.Stripe
             }
             catch (Exception ex)
             {
-                Vendr.Log.Error<StripeCheckoutOneTimePaymentProvider>(ex, "Stripe - CancelPayment");
+                Vendr.Log.Error<StripeCheckoutPaymentProvider>(ex, "Stripe - CancelPayment");
             }
 
             return ApiResult.Empty;
