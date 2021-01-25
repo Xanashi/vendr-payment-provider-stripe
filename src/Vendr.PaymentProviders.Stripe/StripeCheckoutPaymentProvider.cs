@@ -584,7 +584,6 @@ namespace Vendr.PaymentProviders.Stripe
         {
             long recurringTotalPrice = 0;
             bool hasRecurringItems = false;
-            long orderTotalPriceWithPaymentMethodFee = AmountToMinorUnits(order.TransactionAmount.Value - order.PaymentInfo.TotalPrice.Value.WithTax);
 
             var lineItems = new List<SessionLineItemOptions>();
 
@@ -600,6 +599,7 @@ namespace Vendr.PaymentProviders.Stripe
 
             // If we do have recurring items, make sure the total price of the order
             // is greater than the value of all recurring order items
+            long orderTotalPriceWithPaymentMethodFee = AmountToMinorUnits(order.TransactionAmount.Value - order.PaymentInfo.TotalPrice.Value.WithTax);
             if (recurringTotalPrice <= orderTotalPriceWithPaymentMethodFee)
                 return true;
 
